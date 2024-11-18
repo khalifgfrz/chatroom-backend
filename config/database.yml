@@ -80,3 +80,12 @@ test:
 #
 production:
   <<: *default
+  database: <%= ENV['DATABASE_NAME'] %>
+  cable:
+    adapter: postgresql
+    encoding: unicode
+    database: <%= ENV['DATABASE_NAME'] %>
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    username: <%= ENV['DATABASE_USERNAME'] %>
+    password: <%= ENV['DATABASE_PASSWORD'] %>
+    host: <%= ENV['DATABASE_HOST'] %>
