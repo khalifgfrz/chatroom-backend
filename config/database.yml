@@ -15,12 +15,12 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: <%= ENV['DATABASE_NAME'] %>
-  username: <%= ENV['DATABASE_USERNAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  host: <%= ENV['DATABASE_HOST'] %>
-  port: <%= ENV['DATABASE_PORT'] %>
+  pool: 5
+  database: postgres
+  username: postgres.olvlqtuxojixlowgsldc
+  password: 3WMvjH7jR3D99pEp
+  host: aws-0-ap-southeast-1.pooler.supabase.com
+  port: 6543
 
 development:
   <<: *default
@@ -80,12 +80,3 @@ test:
 #
 production:
   <<: *default
-  database: <%= ENV['DATABASE_NAME'] %>
-  cable:
-    adapter: postgresql
-    encoding: unicode
-    database: <%= ENV['DATABASE_NAME'] %>
-    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-    username: <%= ENV['DATABASE_USERNAME'] %>
-    password: <%= ENV['DATABASE_PASSWORD'] %>
-    host: <%= ENV['DATABASE_HOST'] %>
