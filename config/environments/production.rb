@@ -74,5 +74,5 @@ Rails.application.configure do
   config.active_record.attributes_for_inspect = [ :id ]
 
   # config.action_cable.url = ENV['CABLE_URL']
-  config.action_cable.allowed_request_origins = [ENV['CABLE_ALLOWED_ORIGIN']]
+  # config.action_cable.allowed_request_origins = [ENV['CABLE_ALLOWED_ORIGIN']]
 end
