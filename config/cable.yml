@@ -1,18 +1,16 @@
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  database: postgres
-  username: postgres.olvlqtuxojixlowgsldc
-  password: 3WMvjH7jR3D99pEp
-  host: aws-0-ap-southeast-1.pooler.supabase.com
-  port: 6543
-
 development:
-  <<: *default
+  adapter: async
 
 test:
-  <<: *default
+  adapter: test
 
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: <%= ENV['DATABASE_NAME'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
+  port: <%= ENV['DATABASE_PORT'] %>
+  channel_prefix: chatroom_production
