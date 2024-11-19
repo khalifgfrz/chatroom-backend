@@ -7,5 +7,5 @@ test:
 production:
   adapter: async
   allowed_request_origins:
-    - <%= ENV['CABLE_ALLOWED_ORIGIN'] %>
+    - "http://localhost:5173/"
   channel_prefix: chatroom_production
