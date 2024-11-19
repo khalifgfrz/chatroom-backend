@@ -6,3 +6,6 @@ test:
 
 production:
   adapter: async
+  allowed_request_origins:
+    - <%= ENV['CABLE_ALLOWED_ORIGIN'] %>
+  channel_prefix: chatroom_production
