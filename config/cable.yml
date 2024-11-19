@@ -6,4 +6,3 @@ test:
 
 production:
   adapter: async
-  channel_prefix: chatroom_production
