@@ -73,6 +73,6 @@ Rails.application.configure do
   # Only use :id for inspections in production.
   config.active_record.attributes_for_inspect = [ :id ]
 
-  ActionCable.server.config.action_cable.url = ENV['CABLE_URL']
-  ActionCable.server.config.action_cable.allowed_request_origins = [ENV['CABLE_ALLOWED_ORIGIN']]
+  server.config.action_cable.url = ENV['CABLE_URL']
+  server.config.action_cable.allowed_request_origins = [ENV['CABLE_ALLOWED_ORIGIN']]
 end
